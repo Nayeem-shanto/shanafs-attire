@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Shanaf's Attire — Coming Soon</title>
+<meta name="description" content="Shanaf's Attire: thoughtfully chosen women's clothing and jewellery. Our first collection is coming soon.">
+<meta property="og:title" content="Shanaf's Attire — Coming Soon">
+<meta property="og:description" content="Timeless Elegance. Thoughtfully Chosen.">
+<meta property="og:image" content="assets/og-image.png">
+<meta name="theme-color" content="#FAF3EA" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0F3B2E" media="(prefers-color-scheme: dark)">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@500&family=Cormorant+Garamond:ital,wght@1,400;1,500&family=Jost:wght@400&display=swap">
+<style>
+:root{
+  --bg:#FAF3EA;      /* ivory */
+  --ink:#0F3B2E;     /* emerald */
+  --gold:#A9813F;    /* antique gold */
+  --muted:#4B5E56;
+  --frame:rgba(169,129,63,.55);
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0F3B2E;
+    --ink:#FAF3EA;
+    --gold:#C9A465;
+    --muted:#C8D3CC;
+    --frame:rgba(201,164,101,.45);
+  }
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0; min-height:100vh; min-height:100dvh; display:flex; flex-direction:column;
+  background:var(--bg);
+  color:var(--ink);
+  font-family:Jost,"Helvetica Neue",Arial,sans-serif;
+  -webkit-font-smoothing:antialiased;
+}
+/* Double gold frame, echoing the printed posters */
+.frame{
+  position:fixed; inset:max(14px, env(safe-area-inset-top,0px)) 14px max(14px, env(safe-area-inset-bottom,0px)) 14px;
+  border:1px solid var(--frame); pointer-events:none;
+}
+.frame::after{content:""; position:absolute; inset:7px; border:1px solid var(--frame); opacity:.6}
+
+main{
+  flex:1;
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  text-align:center;
+  padding:56px 28px 24px;
+}
+.emblem{width:min(46vw,220px); height:auto; display:block}
+
+/* --- one orchestrated load sequence --- */
+.draw{stroke-dasharray:1; stroke-dashoffset:1; animation:draw 1.6s cubic-bezier(.6,0,.2,1) .2s forwards}
+.draw:nth-child(2){animation-delay:.45s}
+.mono{opacity:0; animation:rise 1.1s ease-out 1.3s forwards}
+.orn{opacity:0; transform-origin:300px 300px; transform:scale(.96); animation:settle .9s ease-out 1.9s forwards}
+.reveal{opacity:0; transform:translateY(10px); animation:rise 1s ease-out forwards}
+.d1{animation-delay:2.1s}.d2{animation-delay:2.4s}.d3{animation-delay:2.7s}.d4{animation-delay:3s}
+
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes rise{to{opacity:1; transform:none}}
+@keyframes settle{to{opacity:1; transform:scale(1)}}
+
+.wordmark{
+  margin:34px 0 0;
+  font-family:"Bodoni Moda",Didot,Georgia,serif; font-weight:500;
+  font-size:clamp(30px,6.4vw,54px);
+  letter-spacing:.18em; margin-right:-.18em;
+  line-height:1;
+}
+.sub{
+  display:flex; align-items:center; gap:16px;
+  margin-top:14px; color:var(--gold);
+  font-size:clamp(11px,2.6vw,14px); letter-spacing:.7em; margin-right:-.7em;
+}
+.sub::before,.sub::after{content:""; width:clamp(28px,8vw,64px); height:1px; background:var(--gold)}
+
+h1{
+  margin:44px 0 0;
+  font-family:"Cormorant Garamond",Georgia,serif; font-style:italic; font-weight:400;
+  font-size:clamp(44px,10vw,88px); line-height:1.02;
+}
+.lede{
+  max-width:40ch; margin:18px auto 0;
+  font-family:"Cormorant Garamond",Georgia,serif; font-style:italic;
+  font-size:clamp(19px,3.6vw,23px); line-height:1.5; color:var(--muted);
+}
+.cta{
+  display:inline-flex; align-items:center; justify-content:center; gap:10px;
+  min-height:48px; margin-top:36px; padding:0 28px;
+  border:1px solid var(--gold); color:var(--ink); text-decoration:none;
+  font-size:15px; letter-spacing:.08em;
+  transition:background-color .25s, color .25s;
+}
+.cta svg{width:18px;height:18px;fill:currentColor}
+.cta:hover{background:var(--ink); color:var(--bg); border-color:var(--ink)}
+.cta:focus-visible{outline:2px solid var(--gold); outline-offset:4px}
+
+footer{
+  padding:0 28px max(34px, calc(env(safe-area-inset-bottom,0px) + 26px));
+  text-align:center; font-size:12px; letter-spacing:.06em; color:var(--muted);
+}
+
+@media (prefers-reduced-motion: reduce){
+  .draw,.mono,.orn,.reveal{animation:none; opacity:1; transform:none; stroke-dashoffset:0}
+}
+</style>
+</head>
+<body>
+<div class="frame" aria-hidden="true"></div>
+<main>
+<svg class="emblem" viewBox="0 0 600 600" role="img" aria-label="Shanaf's Attire SA monogram">
+<g class="rings"> <circle class="draw" pathLength="1" style="stroke:var(--ink)" cx="300" cy="300" r="250" fill="none" stroke-width="6.5"/>
+ <circle class="draw" pathLength="1" style="stroke:var(--gold)" cx="300" cy="300" r="233.8" fill="none" stroke-width="2.8"/></g>
+<g class="mono"><path style="fill:var(--ink)" d="M234.4285060119629 408.1225Q215.5246864318848 408.1225 201.6060549926758 402.2146701049804Q187.6874235534668 396.3068402099609 178.14398025512696 386.01618041992185L161.01487197875977 406.75H155.76581527709962V341.53158416748045H161.73466751098633Q164.66576889038086 354.03658416748044 170.25949569702146 364.95410049438476Q175.8532225036621 375.8716168212891 184.42373367309568 384.1615704345703Q192.9942448425293 392.45152404785154 204.7352276611328 397.1821142578125Q216.47621047973632 401.91270446777344 231.85432388305662 401.91270446777344Q247.54957473754882 401.91270446777344 259.0053367614746 396.4974372863769Q270.4610987854004 391.08217010498043 276.6632525634766 380.9348513793945Q282.8654063415527 370.78753265380857 282.8654063415527 356.3946563720703Q282.8654063415527 343.25223541259766 276.286554107666 334.27153610229493Q269.7077018737793 325.2908367919922 258.7932757568359 318.707433013916Q247.87884963989256 312.1240292358398 234.88432128906248 306.50136428833Q221.8897929382324 300.8786993408203 208.89526458740232 294.61552322387695Q195.90073623657227 288.35234710693356 184.9863101196289 279.8809553527832Q174.07188400268555 271.4095635986328 167.49303176879883 259.2491778564453Q160.9141795349121 247.0887921142578 160.9141795349121 229.60613403320312Q160.9141795349121 212.05941925048828 169.71040634155275 199.12434020996093Q178.50663314819337 186.1892611694336 193.21681442260743 179.0446305847168Q207.92699569702148 171.9 225.46146133422852 171.9Q240.15326889038084 171.9 252.5331898498535 176.5756365966797Q264.91311080932616 181.25127319335937 274.17290634155273 190.64828521728515L291.13119674682616 171.9H296.1636967468262V236.2856787109375H290.32599227905274Q286.42190292358396 217.1377697753906 277.75682388305665 204.27129898071288Q269.0917448425293 191.40482818603516 256.49065979003905 184.97538574218748Q243.88957473754883 178.54594329833984 228.16679122924805 178.54594329833984Q207.38419845581055 178.54594329833984 196.5811408996582 188.5087336730957Q185.77808334350587 198.47152404785155 185.77808334350587 214.84386596679687Q185.77808334350587 226.63513916015623 192.29136169433593 234.83046905517577Q198.80464004516602 243.0257989501953 209.52234451293947 249.2477877807617Q220.2400489807129 255.46977661132811 233.1034295654297 261.0909243774414Q245.9668101501465 266.7120721435547 258.81951461791994 273.2467027282715Q271.67221908569337 279.7813333129883 282.3899235534668 288.73309448242185Q293.1076280212402 297.68485565185546 299.6209063720703 310.4369235229492Q306.1341847229004 323.18899139404294 306.1341847229004 341.4188659667969Q306.1341847229004 361.67091064453126 297.167140045166 376.66473968505863Q288.20009536743163 391.65856872558595 272.06555068969726 399.890534362793Q255.9310060119629 408.1225 234.4285060119629 408.1225Z"/>
+<path style="fill:var(--bg);stroke:var(--bg)" d="M297.56912647094725 326.6171228881836V320.1938228881836H402.77273923950196V326.6171228881836ZM364.3916881652832 151.87369999999996 449.3999485778809 397.2767H475.0239673400879V403.7H374.4938578063965V397.2767H406.8737330505371L343.2535328552246 200.43422436523434L274.57375348510743 397.2767H309.4901534851074V403.7H236.9760326599121V397.2767H267.14597746546633L353.53423472290035 151.87369999999996Z" stroke-width="9.2" stroke-linejoin="round"/>
+<path style="fill:var(--ink)" d="M297.56912647094725 326.6171228881836V320.1938228881836H402.77273923950196V326.6171228881836ZM364.3916881652832 151.87369999999996 449.3999485778809 397.2767H475.0239673400879V403.7H374.4938578063965V397.2767H406.8737330505371L343.2535328552246 200.43422436523434L274.57375348510743 397.2767H309.4901534851074V403.7H236.9760326599121V397.2767H267.14597746546633L353.53423472290035 151.87369999999996Z"/></g>
+<g class="orn"><path style="fill:var(--gold)" d="M359.65,361.00 C363.72,354.63 374.33,357.82 375.21,361.00 C374.33,364.18 363.72,367.37 359.65,361.00Z M357.52,363.12 C363.89,367.19 360.71,377.81 357.52,378.69 C354.34,377.81 351.16,367.19 357.52,363.12Z M355.40,361.00 C351.33,367.37 340.72,364.18 339.83,361.00 C340.72,357.82 351.33,354.63 355.40,361.00Z M357.52,358.88 C351.16,354.81 354.34,344.19 357.52,343.31 C360.71,344.19 363.89,354.81 357.52,358.88Z"/>
+<circle style="fill:var(--bg)" cx="357.525" cy="361.0" r="1.59"/>
+<polygon style="fill:var(--bg);stroke:var(--bg)" points="300,31.75 326.25,58.0 300,84.25 273.75,58.0" stroke-width="13.1"/>
+<polygon style="stroke:var(--gold)" points="300,31.75 326.25,58.0 300,84.25 273.75,58.0" fill="none" stroke-width="2.4"/>
+<path style="fill:var(--ink)" d="M301.73,58.00 C305.05,52.80 313.72,55.40 314.44,58.00 C313.72,60.60 305.05,63.20 301.73,58.00Z M300.00,59.73 C305.20,63.05 302.60,71.72 300.00,72.44 C297.40,71.72 294.80,63.05 300.00,59.73Z M298.27,58.00 C294.95,63.20 286.28,60.60 285.56,58.00 C286.28,55.40 294.95,52.80 298.27,58.00Z M300.00,56.27 C294.80,52.95 297.40,44.28 300.00,43.56 C302.60,44.28 305.20,52.95 300.00,56.27Z"/>
+<circle style="fill:var(--bg)" cx="300" cy="58.0" r="1.30"/>
+<polygon style="fill:var(--bg);stroke:var(--bg)" points="300,515.75 326.25,542.0 300,568.25 273.75,542.0" stroke-width="13.1"/>
+<polygon style="stroke:var(--gold)" points="300,515.75 326.25,542.0 300,568.25 273.75,542.0" fill="none" stroke-width="2.4"/>
+<path style="fill:var(--ink)" d="M301.73,542.00 C305.05,536.80 313.72,539.40 314.44,542.00 C313.72,544.60 305.05,547.20 301.73,542.00Z M300.00,543.73 C305.20,547.05 302.60,555.72 300.00,556.44 C297.40,555.72 294.80,547.05 300.00,543.73Z M298.27,542.00 C294.95,547.20 286.28,544.60 285.56,542.00 C286.28,539.40 294.95,536.80 298.27,542.00Z M300.00,540.27 C294.80,536.95 297.40,528.28 300.00,527.56 C302.60,528.28 305.20,536.95 300.00,540.27Z"/>
+<circle style="fill:var(--bg)" cx="300" cy="542.0" r="1.30"/>
+<circle style="fill:var(--bg)" cx="58.0" cy="300" r="19.7"/>
+<path style="fill:var(--gold)" d="M59.59,301.59 C67.41,299.87 72.98,310.21 71.26,313.26 C68.21,314.98 57.87,309.41 59.59,301.59Z M56.41,301.59 C58.13,309.41 47.79,314.98 44.74,313.26 C43.02,310.21 48.59,299.87 56.41,301.59Z M56.41,298.41 C48.59,300.13 43.02,289.79 44.74,286.74 C47.79,285.02 58.13,290.59 56.41,298.41Z M59.59,298.41 C57.87,290.59 68.21,285.02 71.26,286.74 C72.98,289.79 67.41,300.13 59.59,298.41Z"/>
+<circle style="fill:var(--bg)" cx="58.0" cy="300" r="1.69"/>
+<circle style="fill:var(--gold)" cx="58.0" cy="300" r="3.0"/>
+<circle style="fill:var(--bg)" cx="542.0" cy="300" r="19.7"/>
+<path style="fill:var(--gold)" d="M543.59,301.59 C551.41,299.87 556.98,310.21 555.26,313.26 C552.21,314.98 541.87,309.41 543.59,301.59Z M540.41,301.59 C542.13,309.41 531.79,314.98 528.74,313.26 C527.02,310.21 532.59,299.87 540.41,301.59Z M540.41,298.41 C532.59,300.13 527.02,289.79 528.74,286.74 C531.79,285.02 542.13,290.59 540.41,298.41Z M543.59,298.41 C541.87,290.59 552.21,285.02 555.26,286.74 C556.98,289.79 551.41,300.13 543.59,298.41Z"/>
+<circle style="fill:var(--bg)" cx="542.0" cy="300" r="1.69"/>
+<circle style="fill:var(--gold)" cx="542.0" cy="300" r="3.0"/></g>
+</svg>
+  <p class="wordmark reveal d1">SHANAF&rsquo;S</p>
+  <p class="sub reveal d1">ATTIRE</p>
+  <h1 class="reveal d2">We&rsquo;re coming soon</h1>
+  <p class="lede reveal d3">Thoughtfully chosen women&rsquo;s clothing and jewellery. Our first collection is almost here.</p>
+  <!-- Replace the link below with your Facebook page URL -->
+  <a class="cta reveal d4" href="https://www.facebook.com/profile.php?id=61595600272080" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 22v-8.2h2.8l.4-3.2h-3.2V8.6c0-.9.3-1.6 1.6-1.6h1.7V4.1c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.3H7.3v3.2h2.8V22h3.4z"/></svg>
+    Follow us on Facebook
+  </a>
+</main>
+<footer>&copy; <span id="year">2026</span> Shanaf&rsquo;s Attire &middot; Timeless Elegance. Thoughtfully Chosen.</footer>
+<script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+</body>
+</html>
